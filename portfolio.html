@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josefine Peterson – Portfolio</title>
+  <meta name="description" content="Portfolio – Josefine Peterson, Junior Experience Designer." />
+  <script>
+    try {
+      const t = localStorage.getItem('theme')
+      if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.dataset.theme = 'dark'
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-problem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-goal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/><path d="M12 12l7-7M16 5h3v3"/></symbol>
+    <symbol id="i-process" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></symbol>
+    <symbol id="i-result" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6l6 6-6 6"/></symbol>
+  </svg>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">JP</a>
+
+      <ul class="nav-links">
+        <li><a href="#om-mig" class="nav-link">Om mig</a></li>
+        <li><a href="#projekt" class="nav-link">Projekt</a></li>
+        <li><a href="#fardigheter" class="nav-link">Färdigheter</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-ghost btn-sm">CV</a>
+        <button id="theme-toggle" class="icon-btn" aria-label="Byt tema">
+          <svg class="theme-moon" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <svg class="theme-sun" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+        </button>
+        <button id="menu-btn" class="icon-btn" aria-label="Meny" aria-expanded="false">
+          <svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu">
+      <ul>
+        <li><a href="#om-mig" class="nav-link">Om mig</a></li>
+        <li><a href="#projekt" class="nav-link">Projekt</a></li>
+        <li><a href="#fardigheter" class="nav-link">Färdigheter</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        <li><a href="index.html" class="nav-link">← Tillbaka till CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="pf-hero">
+    <div class="pf-hero-inner">
+      <h1 class="fade-in">Josefine<br />Peterson</h1>
+      <p class="role fade-in d1">Junior Experience Designer</p>
+      <div class="hero-actions fade-in d2">
+        <a href="#projekt" class="btn btn-primary">Se projekt <svg><use href="#i-arrow"/></svg></a>
+        <a href="index.html" class="btn btn-ghost">Läs mitt CV</a>
+      </div>
+    </div>
+    <a href="#om-mig" class="scroll-hint" aria-label="Scrolla ner">
+      <svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </header>
+
+  <main>
+
+    <!-- OM MIG -->
+    <section id="om-mig" class="section">
+      <div class="container about">
+        <div class="about-text reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <p class="eyebrow">Hej!</p>
+            <h2>Om mig</h2>
+          </div>
+          <p>Det är jag som är Josefine, och jag studerar just nu Experience Design på Futuregames.</p>
+          <p>Jag fastnade för UX eftersom det kombinerar kreativitet med problemlösning och fokuserar på hur människor faktiskt använder digitala produkter.</p>
+          <p>Min erfarenhet av att arbeta i butik och från min tidigare utbildning inom stylistprogrammet har gett mig en god förståelse för människor, deras behov och hur man upplever olika situationer.</p>
+          <p>Jag drivs av att förstå hur människor interagerar med digitala produkter och hur små designbeslut kan göra stor skillnad i upplevelsen, samt förståelsen för andras behov.</p>
+        </div>
+        <div class="about-photo reveal">
+          <img src="images/josefine.jpg" alt="Porträtt av Josefine Peterson" />
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGNINTRESSE -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Fokusområden</p>
+          <h2>Designintresse</h2>
+        </div>
+        <div class="interest-grid">
+          <figure class="interest reveal"><img src="images/interest-research.jpg" alt="" loading="lazy" /><figcaption>User Research</figcaption></figure>
+          <figure class="interest reveal"><img src="images/interest-interaction.jpg" alt="" loading="lazy" /><figcaption>Interaction Design</figcaption></figure>
+          <figure class="interest reveal"><img src="images/interest-visual.jpg" alt="" loading="lazy" /><figcaption>Visual Design</figcaption></figure>
+          <figure class="interest reveal"><img src="images/interest-prototyping.jpg" alt="" loading="lazy" /><figcaption>Prototyping</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKTÖVERSIKT -->
+    <section id="projekt" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Utvalda arbeten</p>
+          <h2>Projekt</h2>
+          <p>Fem projekt där jag har gått från research och analys till prototyper och användartester.</p>
+        </div>
+        <div class="project-index reveal">
+          <a href="#helsingborg"><span class="num">01</span><span class="name">Helsingborgs hemsida</span></a>
+          <a href="#duro"><span class="num">02</span><span class="name">Duro.se</span></a>
+          <a href="#vilike"><span class="num">03</span><span class="name">Vilike.fi</span></a>
+          <a href="#academedia"><span class="num">04</span><span class="name">AcadeMedia</span></a>
+          <a href="#speldesign"><span class="num">05</span><span class="name">Speldesign</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKT 1 -->
+    <section id="helsingborg" class="project">
+      <div class="container">
+        <div class="project-head reveal">
+          <div>
+            <p class="eyebrow">Projekt 1 / 5</p>
+            <h2>Helsingborgs hemsida</h2>
+            <p class="client">Arbetsmarknadsförvaltningen</p>
+          </div>
+          <div>
+            <p class="summary">Ett samhällsproblem omsatt till en webbsida: <em>Förbättra din självkänsla</em>.</p>
+            <div class="tags project-tags"><span class="tag">Användartester</span><span class="tag">Enkät</span><span class="tag">Low-fi</span><span class="tag">High-fi</span></div>
+          </div>
+        </div>
+
+        <div class="stage reveal">
+          <div>
+            <span class="stage-label">Steg 1</span>
+            <h3 class="stage-title">Low-fi-prototyp</h3>
+            <div class="facts">
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-problem"/></svg></span><div><h4>Problem</h4><p>I low-fi-prototypen gjorde mycket text och otydliga knappar innehållet svårt att ta till sig, och användaren blev osäker på hur hen skulle navigera. Inläggen blev ett förvirringsmoment.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-goal"/></svg></span><div><h4>Mål</h4><p>Skapa inspirerande innehåll med funktionella knappar som är enkla att förstå, och en mer lättförståelig upplevelse där innehållet är enklare att överblicka.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-process"/></svg></span><div><h4>Process</h4><p>Genomförde användartester och en enkät i Google Forms, och samlade in data om användarnas behov.</p></div></div>
+            </div>
+          </div>
+          <div class="shots">
+            <button class="shot"><img src="images/hbg-lofi-1.png" alt="Low-fi: verktygssida" loading="lazy" /></button>
+            <button class="shot"><img src="images/hbg-lofi-2.png" alt="Low-fi: inspirationsinlägg" loading="lazy" /></button>
+          </div>
+        </div>
+
+        <div class="stage reveal">
+          <div>
+            <span class="stage-label">Steg 2</span>
+            <h3 class="stage-title">High-fi-prototyp</h3>
+            <div class="facts">
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-process"/></svg></span><div><h4>Process</h4><p>Utgick från den tidigare prototypen och insamlad data för att förstå vad som behövde förbättras. Tidigare tester gav en tydlig utgångspunkt, så jag kunde fokusera på struktur och tydlighet utifrån användarens behov.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-result"/></svg></span><div><h4>Resultat</h4><p>Tydligare struktur och bättre placering av rubriker och knappar. Hovereffekter gör interaktionen tydligare. En lättare och mer sammanhängande layout, och en mer framträdande knapp gör det enklare att navigera och förstå sidans funktion.</p></div></div>
+            </div>
+          </div>
+          <div class="shots shots-2">
+            <button class="shot"><img src="images/hbg-hifi-home.png" alt="High-fi: verktygssida" loading="lazy" /></button>
+            <button class="shot"><img src="images/hbg-hifi-inspo.png" alt="High-fi: hitta inspiration" loading="lazy" /></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKT 2 -->
+    <section id="duro" class="project">
+      <div class="container">
+        <div class="project-head reveal">
+          <div>
+            <p class="eyebrow">Projekt 2 / 5</p>
+            <h2>Duro.se</h2>
+            <p class="client">Svenska Tapetmästare</p>
+          </div>
+          <div>
+            <p class="summary">Ett förbättringsförslag med fokus på navigation, struktur och tillgänglighet, anpassat för WCAG 2.1 AA.</p>
+            <div class="tags project-tags"><span class="tag">WCAG 2.1 AA</span><span class="tag">Navigation</span><span class="tag">Interaktion</span><span class="tag">Användartester</span></div>
+          </div>
+        </div>
+
+        <div class="stage reveal">
+          <div>
+            <span class="stage-label">Önskelista &amp; produkter</span>
+            <h3 class="stage-title">Struktur &amp; layout</h3>
+            <div class="facts">
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-problem"/></svg></span><div><h4>Problem i originalet</h4><p>Svår navigation och rörig layout gjorde sidan svår att använda, och den uppfyllde inte tillgänglighetskraven i WCAG 2.1 AA.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-goal"/></svg></span><div><h4>Mål</h4><p>Skapa en tydligare och mer användarvänlig struktur som uppfyller tillgänglighetskraven i WCAG 2.1 AA.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-process"/></svg></span><div><h4>Process</h4><p>Användartester och analys identifierade problem i navigation och struktur, som låg till grund för förbättringarna.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-result"/></svg></span><div><h4>Resultat</h4><p>En mer strukturerad layout med enhetlig bildstorlek och tydligare funktioner. Navigeringen förbättrades genom att förenkla innehållet och förtydliga typografin.</p></div></div>
+            </div>
+          </div>
+          <div class="shots">
+            <button class="shot"><img src="images/duro-wishlist.png" alt="Duro: min önskelista" loading="lazy" /></button>
+            <button class="shot"><img src="images/duro-products.png" alt="Duro: tapetlista med filter" loading="lazy" /></button>
+          </div>
+        </div>
+
+        <div class="stage reveal">
+          <div>
+            <span class="stage-label">Köpvillkor</span>
+            <h3 class="stage-title">Texttunga sidor</h3>
+            <div class="facts">
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-problem"/></svg></span><div><h4>Problem i originalet</h4><p>En texttung layout som gjorde sidan svår att ta till sig och överblicka, och som inte var anpassad för tillgänglighet.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-result"/></svg></span><div><h4>Resultat</h4><p>Ändrad layout på textmassan och klickbara rubriker som tar en direkt till rätt stycke, vilket gör det enklare att överblicka.</p></div></div>
+            </div>
+          </div>
+          <div class="shots" style="max-width:360px;justify-self:center">
+            <button class="shot"><img src="images/duro-terms.png" alt="Duro: köpvillkor med klickbara rubriker" loading="lazy" /></button>
+          </div>
+        </div>
+
+        <div class="stage reveal">
+          <div>
+            <span class="stage-label">Interaktion</span>
+            <h3 class="stage-title">Hjärtat</h3>
+            <div class="facts">
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-problem"/></svg></span><div><h4>Problem i originalet</h4><p>Hjärtat gick inte att interagera med och gav ingen direkt feedback.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-goal"/></svg></span><div><h4>Mål</h4><p>Göra hjärtat till en tydlig och interaktiv funktion som ger direkt feedback.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-result"/></svg></span><div><h4>Resultat</h4><p>Hjärtat placerades mer synligt och gjordes interaktivt. Det byter färg vid klick, syns i navigationsmenyn och lägger automatiskt till produkten i önskelistan.</p></div></div>
+            </div>
+          </div>
+          <div class="shots">
+            <button class="shot"><img src="images/duro-heart.png" alt="Duro: produktlista med interaktiva hjärtan" loading="lazy" /></button>
+            <button class="shot" style="max-width:260px;justify-self:center"><img src="images/duro-heart-detail.png" alt="Duro: hjärtat i navigationen" loading="lazy" /></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKT 3 -->
+    <section id="vilike" class="project">
+      <div class="container">
+        <div class="project-head reveal">
+          <div>
+            <p class="eyebrow">Projekt 3 / 5</p>
+            <h2>Vilike.fi</h2>
+            <p class="client">Kamerabaserat rörelsespel för barn</p>
+          </div>
+          <div>
+            <p class="summary">Förbättrad onboarding och rörelsefeedback i ett kamerabaserat spel för barn.</p>
+            <div class="tags project-tags"><span class="tag">Onboarding</span><span class="tag">Visuell feedback</span><span class="tag">Teamarbete</span><span class="tag">Användartester</span></div>
+          </div>
+        </div>
+
+        <div class="stage reveal">
+          <div>
+            <span class="stage-label">Före</span>
+            <h3 class="stage-title">Utgångsläget</h3>
+            <div class="facts">
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-problem"/></svg></span><div><h4>Problem</h4><p>Berättelsen presenterades i långa textstycken som krävde mycket läsning. Instruktionerna för rörelser var inbäddade i texten och saknade tydlig visuell guidning, så barnen hade svårt att snabbt förstå vad de skulle göra.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-goal"/></svg></span><div><h4>Mål</h4><p>Omvandla de textbaserade instruktionerna till en visuell och intuitiv upplevelse där barn snabbt förstår vad de ska göra, med stöd av animationer och tydliga visuella signaler.</p></div></div>
+            </div>
+          </div>
+          <div class="shots shots-2" style="max-width:320px;justify-self:center">
+            <button class="shot"><img src="images/vilike-before-1.png" alt="Vilike före: lång text" loading="lazy" /></button>
+            <button class="shot"><img src="images/vilike-before-2.png" alt="Vilike före: instruktion i text" loading="lazy" /></button>
+          </div>
+        </div>
+
+        <div class="stage reveal">
+          <div>
+            <span class="stage-label">Efter</span>
+            <h3 class="stage-title">Rörelsefunktionen</h3>
+            <div class="facts">
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-goal"/></svg></span><div><h4>Mål med ny lösning</h4><p>Skapa en tydlig och engagerande rörelsefunktion där barn direkt förstår vad de ska göra, får snabb feedback och känner motivation att fortsätta.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-process"/></svg></span><div><h4>Process</h4><p>Analyserade den befintliga prototypen, identifierade problem i onboarding och rörelseigenkänning och genererade idéer tillsammans med teamet.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-result"/></svg></span><div><h4>Resultat</h4><p>En förbättrad rörelsefunktion med visuella instruktioner, direkt feedback och uppmuntrande respons. I användartester av den nya prototypen förstod barnen snabbare vad de skulle göra och blev mer motiverade att fortsätta spela.</p></div></div>
+            </div>
+          </div>
+          <div class="shots shots-2" style="max-width:420px;justify-self:center">
+            <button class="shot"><img src="images/vilike-foot.png" alt="Vilike efter: Lift your foot!" loading="lazy" /></button>
+            <button class="shot"><img src="images/vilike-frame.png" alt="Vilike efter: Stand inside the frame" loading="lazy" /></button>
+          </div>
+        </div>
+
+        <div class="stage reveal">
+          <div>
+            <span class="stage-label">Efter</span>
+            <h3 class="stage-title">Berättelseflödet</h3>
+            <div class="facts">
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-process"/></svg></span><div><h4>Process</h4><p>Analyserade den befintliga prototypen, identifierade problem och arbetade vidare med idégenerering i teamet.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-result"/></svg></span><div><h4>Resultat</h4><p>Upplevelsen blev mer visuell och lekfull: mindre text och fler animationer och tydliga visuella signaler. Det gjorde flödet enklare att förstå och mer engagerande.</p></div></div>
+            </div>
+          </div>
+          <div class="shots shots-3">
+            <button class="shot"><img src="images/vilike-flow-1.png" alt="Vilike flöde 1" loading="lazy" /></button>
+            <button class="shot"><img src="images/vilike-flow-2.png" alt="Vilike flöde 2" loading="lazy" /></button>
+            <button class="shot"><img src="images/vilike-flow-3.png" alt="Vilike flöde 3" loading="lazy" /></button>
+            <button class="shot"><img src="images/vilike-flow-4.png" alt="Vilike flöde 4" loading="lazy" /></button>
+            <button class="shot"><img src="images/vilike-flow-5.png" alt="Vilike flöde 5" loading="lazy" /></button>
+            <button class="shot"><img src="images/vilike-flow-6.png" alt="Vilike flöde 6" loading="lazy" /></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKT 4 -->
+    <section id="academedia" class="project">
+      <div class="container">
+        <div class="project-head reveal">
+          <div>
+            <p class="eyebrow">Projekt 4 / 5</p>
+            <h2>AcadeMedia</h2>
+            <p class="client">Lärplattform</p>
+          </div>
+          <div>
+            <p class="summary">En förbättrad lärplattform, gjord med mina egna kunskaper och färdigheter.</p>
+            <div class="tags project-tags"><span class="tag">Informationsstruktur</span><span class="tag">Användbarhet</span><span class="tag">UI-design</span></div>
+            <p class="confidential">Projektet omfattas av sekretess, så endast utvalda vyer visas.</p>
+          </div>
+        </div>
+
+        <div class="stage reveal">
+          <div>
+            <div class="facts">
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-goal"/></svg></span><div><h4>Mål med ny lösning</h4><p>Skapa en modernare och mer användarvänlig lärplattform där elever och personal enkelt hittar kurser, material och viktig information, med bättre struktur och ökad tillgänglighet.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-process"/></svg></span><div><h4>Process</h4><p>Analyserade den befintliga plattformen, identifierade användbarhetsproblem och tog fram en ny informationsstruktur.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-result"/></svg></span><div><h4>Resultat</h4><p>En mer överskådlig och lättnavigerad plattform med bättre struktur, modernare design och enklare åtkomst till innehåll. Användarna hittar rätt information snabbare och upplevelsen blir mer effektiv.</p></div></div>
+            </div>
+          </div>
+          <div class="shots">
+            <button class="shot"><img src="images/academedia-laptop.png" alt="AcadeMedia: ny startsida i laptop" loading="lazy" /></button>
+          </div>
+        </div>
+
+        <div class="stage reveal" style="grid-template-columns:1fr">
+          <div class="compare">
+            <div>
+              <button class="shot"><img src="images/academedia-start.png" alt="AcadeMedia före och efter: startsida" loading="lazy" /></button>
+              <p class="shot-caption">Före &amp; efter: startsida</p>
+            </div>
+            <div>
+              <button class="shot"><img src="images/academedia-course.png" alt="AcadeMedia före och efter: kursöversikt" loading="lazy" /></button>
+              <p class="shot-caption">Före &amp; efter: kursöversikt</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKT 5 -->
+    <section id="speldesign" class="project">
+      <div class="container">
+        <div class="project-head reveal">
+          <div>
+            <p class="eyebrow">Projekt 5 / 5</p>
+            <h2>Speldesign</h2>
+            <p class="client">Last Exit · Alessia, Josefine och Sevan</p>
+          </div>
+          <div>
+            <p class="summary">Ett speldesignprojekt med fokus på idéutveckling, AI som verktyg, prototypande, användartester och iteration.</p>
+            <div class="tags project-tags"><span class="tag">Spelmekanik</span><span class="tag">AI / vibe coding</span><span class="tag">3D</span><span class="tag">Iteration</span></div>
+          </div>
+        </div>
+
+        <div class="stage reveal">
+          <div>
+            <div class="facts">
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-goal"/></svg></span><div><h4>Mål</h4><p>Uppgiften var att utveckla ett eget digitalt spel med tydliga regler, mål och spelmekanik. Spelet testades flera gånger och förbättrades utifrån feedback från användartester.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-process"/></svg></span><div><h4>Process</h4><p>Vi tog spelet från idé och skiss till färdig prototyp. AI användes som stöd och byggde spelet utifrån våra idéer och behov.</p></div></div>
+              <div class="fact"><span class="fact-icon"><svg><use href="#i-result"/></svg></span><div><h4>Resultat</h4><p>Resultatet blev <strong>Last Exit</strong>, ett interaktivt zombiespel där spelaren utforskar olika miljöer, genomför uppdrag, möter fiender och samlar resurser.</p></div></div>
+            </div>
+          </div>
+          <div class="shots">
+            <button class="shot"><img src="images/game-cover.jpg" alt="Last Exit: omslagsbild" loading="lazy" /></button>
+          </div>
+        </div>
+
+        <div class="stage reveal" style="grid-template-columns:1fr">
+          <div class="shots shots-3">
+            <button class="shot"><img src="images/game-menu.jpg" alt="Last Exit: startmeny" loading="lazy" /></button>
+            <button class="shot"><img src="images/game-play-1.jpg" alt="Last Exit: spelvy 1" loading="lazy" /></button>
+            <button class="shot"><img src="images/game-play-2.jpg" alt="Last Exit: spelvy 2" loading="lazy" /></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FÄRDIGHETER -->
+    <section id="fardigheter" class="section section-alt" style="border-top:1px solid var(--line)">
+      <div class="container skills-split">
+        <div class="reveal">
+          <div class="section-head"><p class="eyebrow">Vad jag kan</p><h2>Färdigheter</h2></div>
+          <div class="ribbons">
+            <span class="ribbon">Gamification</span>
+            <span class="ribbon">Affärsutveckling</span>
+            <span class="ribbon">User Research</span>
+            <span class="ribbon">UX &amp; Game Thinking</span>
+            <span class="ribbon">Speldesign</span>
+            <span class="ribbon">Experience Design</span>
+            <span class="ribbon">User Testing</span>
+            <span class="ribbon">Analytics &amp; Statistik</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="section-head"><p class="eyebrow">Hur jag jobbar</p><h2>Metoder</h2></div>
+          <div class="methods">
+            <div class="method-box">
+              <ul><li>Användarintervjuer</li><li>Användartester</li><li>Enkäter</li><li>Personas</li><li>Customer journey maps</li></ul>
+            </div>
+            <div class="method-box">
+              <ul><li>Wireframes</li><li>Prototyping</li><li>Jobs to be done</li><li>Site maps</li><li>Idégenerering</li><li>AI</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="section">
+      <div class="container contact">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:0"><p class="eyebrow">Hör av dig</p><h2>Kontakt</h2></div>
+          <ul class="contact-list">
+            <li><a href="tel:+46764239997"><span class="ci"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg></span>+46 76 423 99 97</a></li>
+            <li><span><span class="ci"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg></span>Järfälla, Stockholm</span></li>
+            <li><a href="mailto:jossiecossie@icloud.com"><span class="ci"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.24l-8 5-8-5V6l8 5 8-5z"/></svg></span>jossiecossie@icloud.com</a></li>
+            <li><a href="https://www.linkedin.com/in/josefine-peterson-59697a396" target="_blank" rel="noopener noreferrer"><span class="ci"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></span>linkedin.com/in/josefine-peterson-59697a396</a></li>
+            <li><a href="https://github.com/josefinepetersooon" target="_blank" rel="noopener noreferrer"><span class="ci"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 00-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 015.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0012 .5z"/></svg></span>github.com/josefinepetersooon</a></li>
+          </ul>
+          <div class="hero-actions">
+            <a href="index.html" class="btn btn-ghost">Tillbaka till CV</a>
+          </div>
+        </div>
+        <div class="arch reveal">
+          <img src="images/josefine-2.jpg" alt="Josefine vid en hamn i solnedgång" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="thanks section-alt">
+      <div class="container reveal">
+        <h2>Tack för att du tagit del av mitt arbete &lt;3</h2>
+        <p>JOSEFINE PETERSON</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Josefine Peterson · Järfälla, Stockholm</p>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Förstorad bild">
+    <button class="icon-btn lightbox-close" aria-label="Stäng">
+      <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <img src="" alt="" />
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
